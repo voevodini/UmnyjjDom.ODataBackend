@@ -51,7 +51,7 @@ CREATE TABLE [Тариф] (
 
 	 [ДатаНачала] DATETIME  NULL,
 
-	 [ДатаОкончания] DATETIME  NULL,
+	 [ДатаОкон] DATETIME  NULL,
 
 	 [Единица] VARCHAR(255)  NULL,
 
@@ -74,7 +74,7 @@ CREATE TABLE [ПоказаниеПУ] (
 
 	 [Дата] DATETIME  NULL,
 
-	 [ПолученоАвтоматически] BIT  NULL,
+	 [ПолученоАвто] BIT  NULL,
 
 	 [ПриборУчета_m0] UNIQUEIDENTIFIER  NOT NULL,
 
@@ -89,7 +89,7 @@ CREATE TABLE [Помещение] (
 
 	 [ТипПомещения] VARCHAR(255)  NULL,
 
-	 [КолвоПроживающих] VARCHAR(255)  NULL,
+	 [Колвопр] VARCHAR(255)  NULL,
 
 	 [Дом_m0] UNIQUEIDENTIFIER  NOT NULL,
 
@@ -165,7 +165,7 @@ CREATE TABLE [ПриборУчета] (
 
 	 [Актуальность] BIT  NULL,
 
-	 [АвтоматическаяПередача] BIT  NULL,
+	 [АвтоПередача] BIT  NULL,
 
 	 [МодельПУ_m0] UNIQUEIDENTIFIER  NOT NULL,
 
