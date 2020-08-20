@@ -49,9 +49,9 @@ CREATE TABLE [Тариф] (
 
 	 [Описание] VARCHAR(255)  NULL,
 
-	 [ДатаНачала] date  NULL,
+	 [ДатаНачала] DATETIME  NULL,
 
-	 [ДатаОкончания] date  NULL,
+	 [ДатаОкончания] DATETIME  NULL,
 
 	 [Единица] VARCHAR(255)  NULL,
 
@@ -72,7 +72,7 @@ CREATE TABLE [ПоказаниеПУ] (
 
 	 [Значение] INT  NULL,
 
-	 [Дата] date  NULL,
+	 [Дата] DATETIME  NULL,
 
 	 [ПолученоАвтоматически] BIT  NULL,
 
@@ -182,9 +182,9 @@ CREATE TABLE [ПриборУчета] (
 
 	 [Единица] VARCHAR(255)  NULL,
 
-	 [ДатаУстановки] date  NULL,
+	 [ДатаУстановки] DATETIME  NULL,
 
-	 [ДатаСнятия] date  NULL,
+	 [ДатаСнятия] DATETIME  NULL,
 
 	 [Актуальность] BIT  NULL,
 
@@ -208,7 +208,7 @@ CREATE TABLE [Квитанция] (
 
 	 [primaryKey] UNIQUEIDENTIFIER  NOT NULL,
 
-	 [Дата] date  NULL,
+	 [Дата] DATETIME  NULL,
 
 	 [idTelePlus] INT  NULL,
 
