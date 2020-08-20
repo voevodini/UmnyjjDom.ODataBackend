@@ -108,8 +108,6 @@ CREATE TABLE [Помещение] (
 
 	 [Дом_m0] UNIQUEIDENTIFIER  NOT NULL,
 
-	 [АдресныйРеестр_m0] UNIQUEIDENTIFIER  NOT NULL,
-
 	 [Собственник_m0] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
@@ -124,8 +122,6 @@ CREATE TABLE [Дом] (
 	 [summS] INT  NULL,
 
 	 [УправляющаяКомпания_m0] UNIQUEIDENTIFIER  NOT NULL,
-
-	 [АдресныйРеестр_m0] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 
@@ -168,10 +164,6 @@ CREATE TABLE [УправляющаяКомпания] (
 CREATE TABLE [ДомПоставщик] (
 
 	 [primaryKey] UNIQUEIDENTIFIER  NOT NULL,
-
-	 [Дом_m0] UNIQUEIDENTIFIER  NOT NULL,
-
-	 [Поставщик_m0] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 
@@ -443,26 +435,14 @@ CREATE INDEX ПомещениеСобственника_IСобственник_
  ALTER TABLE [Помещение] ADD CONSTRAINT [Помещение_FДом_0] FOREIGN KEY ([Дом_m0]) REFERENCES [Дом]
 CREATE INDEX Помещение_IДом_m0 on [Помещение] ([Дом_m0])
 
- ALTER TABLE [Помещение] ADD CONSTRAINT [Помещение_FАдресныйРеестр_0] FOREIGN KEY ([АдресныйРеестр_m0]) REFERENCES [АдресныйРеестр]
-CREATE INDEX Помещение_IАдресныйРеестр_m0 on [Помещение] ([АдресныйРеестр_m0])
-
  ALTER TABLE [Помещение] ADD CONSTRAINT [Помещение_FСобственник_0] FOREIGN KEY ([Собственник_m0]) REFERENCES [Собственник]
 CREATE INDEX Помещение_IСобственник_m0 on [Помещение] ([Собственник_m0])
 
  ALTER TABLE [Дом] ADD CONSTRAINT [Дом_FУправляющаяКомпания_0] FOREIGN KEY ([УправляющаяКомпания_m0]) REFERENCES [УправляющаяКомпания]
 CREATE INDEX Дом_IУправляющаяКомпания_m0 on [Дом] ([УправляющаяКомпания_m0])
 
- ALTER TABLE [Дом] ADD CONSTRAINT [Дом_FАдресныйРеестр_0] FOREIGN KEY ([АдресныйРеестр_m0]) REFERENCES [АдресныйРеестр]
-CREATE INDEX Дом_IАдресныйРеестр_m0 on [Дом] ([АдресныйРеестр_m0])
-
  ALTER TABLE [Сотрудник] ADD CONSTRAINT [Сотрудник_FУправляющаяКомпания_0] FOREIGN KEY ([УправляющаяКомпания_m0]) REFERENCES [УправляющаяКомпания]
 CREATE INDEX Сотрудник_IУправляющаяКомпания_m0 on [Сотрудник] ([УправляющаяКомпания_m0])
-
- ALTER TABLE [ДомПоставщик] ADD CONSTRAINT [ДомПоставщик_FДом_0] FOREIGN KEY ([Дом_m0]) REFERENCES [Дом]
-CREATE INDEX ДомПоставщик_IДом_m0 on [ДомПоставщик] ([Дом_m0])
-
- ALTER TABLE [ДомПоставщик] ADD CONSTRAINT [ДомПоставщик_FПоставщик_0] FOREIGN KEY ([Поставщик_m0]) REFERENCES [Поставщик]
-CREATE INDEX ДомПоставщик_IПоставщик_m0 on [ДомПоставщик] ([Поставщик_m0])
 
  ALTER TABLE [ПриборУчета] ADD CONSTRAINT [ПриборУчета_FМодельПУ_0] FOREIGN KEY ([МодельПУ_m0]) REFERENCES [МодельПУ]
 CREATE INDEX ПриборУчета_IМодельПУ_m0 on [ПриборУчета] ([МодельПУ_m0])
